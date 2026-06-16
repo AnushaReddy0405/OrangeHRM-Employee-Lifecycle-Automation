@@ -181,17 +181,6 @@ Password : admin123
 ```bash
 mvn test
 ```
-
----
-
-## Run Specific Tagged Scenario
-
-```bash
-mvn test -Dcucumber.filter.tags="@EmployeeLifecycle"
-```
-
----
-
 ## Run from Eclipse
 
 1. Import Maven Project
