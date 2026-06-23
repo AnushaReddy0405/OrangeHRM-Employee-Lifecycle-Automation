@@ -15,21 +15,14 @@ public class Hooks extends BaseClass {
 	public void attachScreenshotForEachStep(Scenario scenario) {
 
 		try {
-
 			waitForPageLoad();
-
-			byte[] screenshot = ((TakesScreenshot) driver)
-					.getScreenshotAs(OutputType.BYTES);
-
-			scenario.attach(
-					screenshot,
-					"image/png",
-					"Screenshot");
-
+			byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+			scenario.attach(screenshot, "image/png", "Screenshot");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+
 	@After
 	public void afterScenario() {
 

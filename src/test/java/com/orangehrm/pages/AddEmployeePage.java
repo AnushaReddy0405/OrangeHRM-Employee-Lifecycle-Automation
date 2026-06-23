@@ -21,15 +21,12 @@ public class AddEmployeePage extends BaseClass {
 
 		elementClick(btnPim);
 		elementClick(btnAddEmployee);
-
 		elementSendKeys(txtFirstName, firstName);
 		elementSendKeys(txtLastName, lastName);
 		int randomNum = (int) (Math.random() * 9000) + 1000;
 		elementSendKeys(txtEmployeeId, String.valueOf(randomNum));
 		String employeeId = findElement(txtEmployeeId).getDomProperty("value");
-
 		String fullPath = new File(profilePicPath).getAbsolutePath();
-
 		File file = new File(fullPath);
 		System.out.println("Profile Pic Path : " + fullPath);
 		System.out.println("File Exists : " + file.exists());
@@ -39,10 +36,8 @@ public class AddEmployeePage extends BaseClass {
 		}
 
 		uploadFile(btnUploadPhoto, fullPath);
-
 		elementClick(btnSave);
 		waitForPresence(successMessage);
-
 		return employeeId;
 	}
 }

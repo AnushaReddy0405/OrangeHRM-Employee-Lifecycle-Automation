@@ -27,13 +27,10 @@ public class BaseClass {
 	public void waitForPageLoad() {
 
 		for (int i = 0; i < 20; i++) {
-
 			String readyState = ((JavascriptExecutor) driver).executeScript("return document.readyState").toString();
-
 			if (readyState.equals("complete")) {
 				break;
 			}
-
 			try {
 				Thread.sleep(500);
 			} catch (InterruptedException e) {
@@ -75,7 +72,6 @@ public class BaseClass {
 	public WebElement waitForPresence(By locator) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.ignoring(StaleElementReferenceException.class);
-
 		return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 	}
 
@@ -90,22 +86,18 @@ public class BaseClass {
 	public String takeScreenshot(String fileName) {
 
 		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-
 		String path = "target/screenshots/" + fileName + ".png";
-
 		try {
 			FileUtils.copyFile(src, new File(path));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 		return System.getProperty("user.dir") + "/" + path;
 	}
 
 	public void clickWithRetry(By by) {
 
 		int attempts = 0;
-
 		while (attempts < 3) {
 			try {
 				WebElement element = findElement(by);
