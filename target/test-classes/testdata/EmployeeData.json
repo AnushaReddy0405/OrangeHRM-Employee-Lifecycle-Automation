@@ -1,8 +1,8 @@
 {
   "username": "Admin",
   "password": "admin123",
-  "firstName": "Jamuna",
-  "lastName": "M",
+  "firstName": "Anusha",
+  "lastName": "R",
   "jobTitle": "Account Assistant",
   "employmentStatus": "Full-Time Permanent",
   "profilePic": "src\\test\\resources\\profile\\profile.png"
